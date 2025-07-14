@@ -1,13 +1,95 @@
+<div class="drawer">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <!-- Navbar -->
+    <div class="navbar bg-base-300 w-full">
+      <div class="flex-none">
+        <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-6 w-6 stroke-current"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </label>
+      </div>
+      <!-- <div class="mx-2 flex-1 px-2">Bepensa -->
+        <div class="mx-2 flex-2 px-2">Bepensa
+        <ul class="menu menu-horizontal">
+          <!-- Navbar menu content here -->
+          <li><a>Navbar Item 1</a></li>
+          <li><a>Navbar Item 2</a></li>
+          <li>
+            <details open>
+              <summary>Procesos</summary>
+              <ul>
+                <li class="w-3xs"><a>Pendientes Por timbrar</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+         </li>
+        </ul>
+      </div>
 
-<h3 class="text-3xl font-bold underline text-red-500">
-  {{title}}
-</h3>
+      <div class="hidden flex-none lg:block">
+        <ul class="menu menu-horizontal ">
+          <!-- Navbar menu content here -->
+          <li><a>Navbar Item 1</a></li>
+          <li><a>Navbar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Page content here -->
+    <!--  AQUI SE LE PUEDE METER OTRO NAVBAR, PARA QUE SE VEAN MAS MENUS -->
+  </div>
+  <div class="drawer-side">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-base-200 min-h-full w-80 p-4">
+      <!-- Sidebar content here -->
+      <li><a>Sidebar Item 1</a></li>
+      <li><a>Sidebar Item 2</a></li>
+    </ul>
+  </div>
+</div>
 
 
-<ul>
+
+<ul class="list bg-base-100 rounded-box shadow-md m-20">
+    <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Tus pokemones</li>
     @for(pokemon of pokemones(); track pokemon.name) {
-        <li>{{pokemon.name}} -  {{pokemon.url}}</li>
+
+    <!-- <li>{{pokemon.name}} -  {{pokemon.url}}</li> -->
+
+    <li class="list-row">
+        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp" /></div>
+        <div>
+            <div>{{pokemon.name}}</div>
+            <div class="text-xs uppercase font-semibold opacity-60">{{pokemon.url}}</div>
+        </div>
+        <button class="btn btn-square btn-ghost">
+            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
+                    <path d="M6 3L20 12 6 21 6 3z"></path>
+                </g>
+            </svg>
+        </button>
+        <button class="btn btn-square btn-ghost">
+            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor">
+                    <path
+                        d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                    </path>
+                </g>
+            </svg>
+        </button>
+    </li>
     }
 </ul>
 
-<button class="btn btn-soft btn-primary">Primary</button>

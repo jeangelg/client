@@ -13,7 +13,7 @@ export class App implements OnInit {
   
   private http = inject(HttpClient);
 
-  protected title = 'Pokemones';
+  protected title = 'Pokemon App';
 
   protected pokemones = signal<any>([]);
 
