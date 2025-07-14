@@ -1,3 +1,8 @@
 <h1>{{title}}</h1>
 
 
+<ul>
+    @for(pokemon of pokemones(); track pokemon.name) {
+        <li>{{pokemon.name}} -  {{pokemon.url}}</li>
+    }
+</ul>
