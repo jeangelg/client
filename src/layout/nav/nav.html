@@ -17,19 +17,25 @@
           </ul>
         </li>
         <li><a>Item 3</a></li>
-        <form class="w-40">
-          <div class="flex flex-col">
-            <input id="usuario" type="text" placeholder="Usuario" class="input required my-1 input-sm" />
-            <input id="password" type="password" placeholder="contraseña " class="input required  input-sm" />
-          </div>
-
-          <div class="flex flex-wrap m-1">
-            <button class="btn btn-primary btn-sm">Ingresar</button>
-            <label class="label">
-              <a href="#" class="label-text-alt link link-hover text-sm">¿Olvidaste tu contraseña?</a>
-            </label>
-          </div>
-        </form>
+        @if (loggedIn) {
+        <details class="dropdown">
+          <summary class="btn m-1 text-xs">Mi usuario
+            <div class="avatar">
+              <div class="w-8 rounded">
+                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  alt="Tailwind-CSS-Avatar-component" />
+              </div>
+            </div>
+          </summary>
+          <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+            <li><a>Item 1</a></li>
+            <li><a>Item 2</a></li>
+          </ul>
+        </details>
+        }
+        @else{
+        <app-login-form mode="mobile" (loggedIn)="handleLogin($event)"> </app-login-form>
+        }
 
       </ul>
 
@@ -37,7 +43,7 @@
     <a class="btn btn-ghost text-xl">Bepensa</a>
   </div>
   <!-- Codigo para la parte de pantalla grande -->
-  <div class="navbar-start hidden lg:flex">
+  <div class="navbar-start hidden lg:flex justify-start">
     <ul class="menu menu-horizontal px-1">
       <li><a>Item 1</a></li>
       <li>
@@ -52,21 +58,31 @@
       <li><a>Item 3</a></li>
     </ul>
   </div>
+  @if (loggedIn) {
+    <div class="navbar-end hidden lg:flex">
+      <details class="dropdown">
+    <summary class="btn m-1">Mi usuario
+      <div class="avatar">
+        <div class="w-8 rounded">
+          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+            alt="Tailwind-CSS-Avatar-component" />
+        </div>
+      </div>
+    </summary>
+    <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+      <li><a>Item 1</a></li>
+      <li><a>Item 2</a></li>
+    </ul>
+  </details>
+
+    </div>
+  
+  }
+  @else {
   <div class="navbar-end hidden lg:flex">
-    <form class="w-70">
-
-      <div class="flex flex-row">
-        <input id="usuario" type="text" placeholder="Usuario" class="input required mx-1 input-sm" />
-        <input id="password" type="password" placeholder="contraseña " class="input required  input-sm" />
-      </div>
-
-      <div class="flex flex-wrap m-1">
-        <button class="btn btn-primary btn-sm">Ingresar</button>
-        <label class="label">
-          <a href="#" class="label-text-alt link link-hover text-sm">¿Olvidaste tu contraseña?</a>
-        </label>
-      </div>
-
-    </form>
+    <app-login-form mode="desktop" (loggedIn)="handleLogin($event)">
+    </app-login-form>
   </div>
+  }
+
 </div>

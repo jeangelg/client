@@ -1,0 +1,25 @@
+<form class="w-full" (ngSubmit)="submitLogin()" #loginForm="ngForm">
+
+  <div [ngClass]="mode === 'mobile' ? 'flex flex-col' : 'flex flex-row'">
+    <input
+      name="username"
+      [(ngModel)]="creds.username"
+      type="text"
+      placeholder="Usuario"
+      class="input required input-sm m-1" />
+
+    <input
+      [(ngModel)]="creds.password"
+       name="password"
+      type="password"
+      placeholder="Contraseña"
+      class="input required input-sm m-1" />
+  </div>
+
+  <div class="flex flex-wrap m-1">
+    <button type="submit" class="btn btn-primary btn-sm">Ingresar</button>
+    <label class="label">
+      <a href="#" class="label-text-alt link link-hover text-sm">¿Olvidaste tu contraseña?</a>
+    </label>
+  </div>
+</form>
