@@ -17,7 +17,7 @@
           </ul>
         </li>
         <li><a>Item 3</a></li>
-        @if (loggedIn) {
+        @if (authStore.loggedIn()) {
         <details class="dropdown">
           <summary class="btn m-1 text-xs">Mi usuario
             <div class="avatar">
@@ -28,13 +28,13 @@
             </div>
           </summary>
           <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
+            <li><a>Profile</a></li>
+            <li><a (click)="handleLogout()">Logout</a></li>
           </ul>
         </details>
         }
         @else{
-        <app-login-form mode="mobile" (loggedIn)="handleLogin($event)"> </app-login-form>
+        <app-login-form mode="mobile"> </app-login-form>
         }
         
       </ul>
@@ -57,7 +57,7 @@
       <li><a>Item 3</a></li>
     </ul>
   </div>
-  @if (loggedIn) {
+  @if (authStore.loggedIn()) {
     <div class="navbar-end hidden lg:flex">
       <details class="dropdown">
     <summary class="btn m-1">Mi usuario
@@ -69,8 +69,8 @@
       </div>
     </summary>
     <ul class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-      <li><a>Item 1</a></li>
-      <li><a>Item 2</a></li>
+      <li><a>Profile</a></li>
+      <li><a (click)="handleLogout()">Log out</a></li>
     </ul>
   </details>
 
@@ -79,7 +79,7 @@
   }
   @else {
   <div class="navbar-end hidden lg:flex">
-    <app-login-form mode="desktop" (loggedIn)="handleLogin($event)">
+    <app-login-form mode="desktop">
     </app-login-form>
   </div>
   }
