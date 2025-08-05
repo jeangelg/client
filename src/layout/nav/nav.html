@@ -17,9 +17,9 @@
           </ul>
         </li>
         <li><a>Item 3</a></li>
-        @if (authStore.loggedIn()) {
+        @if (accountService.currentUser(); as user) {
         <details class="dropdown">
-          <summary class="btn m-1 text-xs">Mi usuario
+          <summary class="btn m-1 text-xs">{{user.firstName + ' ' + user.lastName}}
             <div class="avatar">
               <div class="w-8 rounded">
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
@@ -57,10 +57,10 @@
       <li><a>Item 3</a></li>
     </ul>
   </div>
-  @if (authStore.loggedIn()) {
+  @if (accountService.currentUser(); as user ) {
     <div class="navbar-end hidden lg:flex">
       <details class="dropdown">
-    <summary class="btn m-1">Mi usuario
+    <summary class="btn m-1">{{user.firstName + ' ' + user.lastName}}
       <div class="avatar">
         <div class="w-8 rounded">
           <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"

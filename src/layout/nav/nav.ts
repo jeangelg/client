@@ -1,22 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { LoginForm } from '../login-form/login-form';
-import { AuthStore } from '../../app/core/stores/auth.store';
+import { AccountService } from '../../app/core/services/account-service';
 
 
 @Component({
   selector: 'app-nav',
   imports: [LoginForm ],
   templateUrl: './nav.html',
-  styleUrl: './nav.css'
+  styleUrl: './nav.css'         
 })
 export class Nav {
-  authStore = inject(AuthStore);
-  loggedIn = false;
-
-
-
+  protected accountService = inject(AccountService);
+  
   handleLogout() {
-    this.authStore.logout();
+    this.accountService.logout();
   }
 
 
