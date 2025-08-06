@@ -1,5 +1,7 @@
 <app-nav></app-nav>
 
+<router-outlet />
+
 <ul class="list bg-base-100 rounded-box shadow-md m-20">
     <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Tus pokemones</li>
     @for(pokemon of pokemones(); track pokemon.name) {
@@ -31,4 +33,6 @@
     </li>
     }
 </ul>
+
+
 

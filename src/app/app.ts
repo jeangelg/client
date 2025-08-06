@@ -7,7 +7,7 @@ import { AccountService } from './core/services/account-service';
 
 @Component({
   selector: 'app-root',
- imports: [Nav],
+ imports: [Nav, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
