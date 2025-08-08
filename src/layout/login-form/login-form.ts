@@ -3,10 +3,11 @@ import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../../app/core/services/account-service';
 import { LoginCreds } from '../../types/user';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './login-form.html',
   styleUrl: './login-form.css'
 })
