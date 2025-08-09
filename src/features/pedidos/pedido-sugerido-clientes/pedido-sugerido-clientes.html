@@ -1,0 +1,50 @@
+<div class=" mt-24 ">
+
+  @if (!isInNewView()) {
+    <button routerLink="new-pedido-sugerido-cliente" class="btn btn-primary btn-xs sm:btn-sm">New</button>
+
+    <div class="overflow-x-auto ">
+      <table class="table table-xs md:table-md">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Cuenta clave</th>
+            <th>Cuc</th>
+            <th>Cliente</th>
+            <th>Codope</th>
+            <th>Centro</th>
+            <th>GLN Sucursal</th>
+            <th>PTAuto</th>
+            <th>Created On</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1</th>
+            <td>Cy Ganderton</td>
+            <td>Quality Control Specialist</td>
+            <td>Littel, Schaden and Vandervort</td>
+            <td>Canada</td>
+            <td>12/16/2020</td>
+            <td>Blue</td>
+          </tr>
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Job</th>
+            <th>company</th>
+            <th>location</th>
+            <th>Last Login</th>
+            <th>Favorite Color</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+  }
+    
+    <router-outlet></router-outlet>
+</div>
