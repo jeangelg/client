@@ -47,28 +47,20 @@
                     <input type="text" placeholder="GLN Proveedor" class="input input-bordered flex-1" required />
                 </div>
                 
-                <div class="form-control">
-                    <label class="label mb-2">
-                        <span class="label-text">PTAuto</span>
-                    </label>
-                
-                    <div class="flex gap-x-6">
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input type="radio" name="ptauto" value="si" class="radio radio-neutral" />
-                            <span class="ml-2">Sí</span>
-                        </label>
-                
-                        <label class="inline-flex items-center cursor-pointer">
-                            <input type="radio" name="ptauto" value="no" class="radio radio-neutral" />
-                            <span class="ml-2">No</span>
-                        </label>
+    
+                <div class="form-control flex items-center space-x-2">
+                    <label class="w-30 text-right">PTAuto:</label>
+                    <div class="flex items-center">
+                        <input  id="disabled-radio-1" type="radio" value="" name="disabled-radio" class="w-4 h-4">
+                        <label for="disabled-radio-1" class="ms-2 text-sm">Si</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input checked id="disabled-radio-2" type="radio" value="" name="disabled-radio" class="w-4 h-4">
+                        <label for="disabled-radio-2" class="ms-2 text-sm">No</label>
                     </div>
                 </div>
-
-           
-
-
-
+                    
 
             <div class="form-control mt-6">
                 <button class="btn btn-primary">Register</button>
