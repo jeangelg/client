@@ -5,66 +5,52 @@
 <div class="flex justify-center items-center p-2">
 
     <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
-        <form class="card-body">
+        <form [formGroup]="nuevoPedidoForm" class="card-body">
 
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">Cuenta Clave:</label>
-                    <input type="text" placeholder="Cuenta Clave" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">Cliente:</label>
-                    <input type="text" placeholder="Cliente" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">Cliente CodOpe:</label>
-                    <input type="text" placeholder="Cliente CodOpe" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">Codope:</label>
-                    <input type="text" placeholder="Codope" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">Centro:</label>
-                    <input type="text" placeholder="Centro" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">GLN Proveedor:</label>
-                    <input type="text" placeholder="GLN Proveedor" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">GLN Sucursal:</label>
-                    <input type="text" placeholder="GLN Sucursal" class="input input-bordered flex-1" required />
-                </div>
-                
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">GLN Proveedor:</label>
-                    <input type="text" placeholder="GLN Proveedor" class="input input-bordered flex-1" required />
-                </div>
-                
-    
-                <div class="form-control flex items-center space-x-2">
-                    <label class="w-30 text-right">PTAuto:</label>
-                    <div class="flex items-center">
-                        <input  id="disabled-radio-1" type="radio" value="" name="disabled-radio" class="w-4 h-4">
-                        <label for="disabled-radio-1" class="ms-2 text-sm">Si</label>
-                    </div>
+        <app-input-text  label="Cuenta Clave:" placeHolder="Cuenta Clave" formControlName="cuentaClave"  type="text"/>   
 
-                    <div class="flex items-center">
-                        <input checked id="disabled-radio-2" type="radio" value="" name="disabled-radio" class="w-4 h-4">
-                        <label for="disabled-radio-2" class="ms-2 text-sm">No</label>
-                    </div>
-                </div>
-                    
+        <app-input-text  label="Cliente:" formControlName="cliente" type="text"/>   
 
-            <div class="form-control mt-6">
-                <button class="btn btn-primary">Register</button>
-            </div>
+        <app-input-text  label="Cliente CodOpe:" formControlName="clienteCodOpe" type="text"/>   
+
+        <app-input-text  label="Codope:" formControlName="codope" type="text"/>   
+
+        <app-input-text  label="Centro:" formControlName="centro" type="text"/>   
+
+        <app-input-text  label="Gln Proveedor:" formControlName="glnProveedor" type="text"/>   
+
+        <app-input-text  label="Gln Sucursal:" formControlName="glnSucursal" type="text"/>   
+
+      <div class="form-control flex items-center space-x-2">
+        <label class="w-30 text-right">PTAuto:</label>
+        <div class="flex items-center space-x-4">
+          <label class="flex items-center">
+            <input
+              type="radio"
+              class="w-4 h-4"
+              value="si"
+              formControlName="ptAuto"
+            />
+            <span class="ms-2 text-sm">Sí</span>
+          </label>
+
+          <label class="flex items-center">
+            <input
+              type="radio"
+              class="w-4 h-4"
+              value="no"
+              formControlName="ptAuto"
+            />
+            <span class="ms-2 text-sm">No</span>
+          </label>
+        </div>
+      </div> 
+
+      <div class="form-control mt-6">
+        <button class="btn btn-primary" type="submit" [disabled]="nuevoPedidoForm.invalid">
+          Guardar
+        </button>
+      </div>
         </form>
     </div>
 

@@ -1,0 +1,39 @@
+<!-- <div class="form-control flex items-center space-x-2">
+    <label class="w-30 text-right">{{label()}}</label>
+    <input 
+    [type]="type()"
+    [placeholder]="placeHolder()"
+    [formControl]="control"
+    class="input input-bordered flex-1  placeholder-gray-500"
+    [class.input-error]="control.invalid && control.touched"
+    [class.input-success]="control.valid && control.touched"
+    />
+
+    @if (control.hasError('required') &&  control.touched) {
+        <div class="validatio-hint text-error text-xs">
+            {{label()}} es requerido
+        </div>
+    }
+</div>
+
+ -->
+
+ <div class="form-control flex flex-col">
+  <label class="label font-semibold">
+    <span class="label-text">{{ label() }}</span>
+  </label>
+  <input
+    [type]="type()"
+    [placeholder]="placeHolder()"
+    [formControl]="control"
+    class="input input-bordered placeholder-gray-500 validator"
+     [class.input-error]="control.invalid && control.touched"
+    [class.input-success]="control.valid && control.touched"
+  />
+
+  @if(control.hasError('required') &&  control.touched) {
+    <div class="validatio-hint text-error text-xs">
+            {{label()}} es requerido
+        </div>
+  }
+ </div>
